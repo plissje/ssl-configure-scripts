@@ -57,8 +57,8 @@ command_exists() {
 create_cert_bundle() {
   log "Creating cert bundle:"
   # Original script values
-  curl -k "https://addon-$tenant_name/config/ca/cert?org_key=$org_key" > $cert_dir/$cert_name
-  curl -k "https://addon-$tenant_name/config/org/cert?org_key=$org_key" >> $cert_dir/$cert_name
+  curl -k "https://addon-$tenant_name/config/ca/cert?orgkey=$org_key" > $cert_dir/$cert_name
+  curl -k "https://addon-$tenant_name/config/org/cert?orgkey=$org_key" >> $cert_dir/$cert_name
   curl -k -L "https://ccadb-public.secure.force.com/mozilla/IncludedRootsPEMTxt?TrustBitsInclude=Websites" >> $cert_dir/$cert_name
 }
 
